@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a18cd1 100%);
+            font-family: 'Arial', sans-serif;
+            flex-direction: column;
+            gap: 20px;
+        }
+        #div1, #div2 {
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        button {
+            background: #a18cd1;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #fbc2eb;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <button id="btn" onclick="fun()">click to go back</button>
+
+    <script>
+        
+
+        let div1=document.getElementById("div1")
+        let div2=document.getElementById("div2")
+        let btn=document.getElementById("btn")
+
+        let a=localStorage.getItem("username")
+        let b=localStorage.getItem("userpassword")
+
+        div1.innerHTML=`<b>Username : </b> ${a}`
+        div2.innerHTML=`<b>Password : </b> ${b}`
+
+
+        function fun() {
+
+            history.back()
+            
+        }
+
+        // console.log(a);   
+        // console.log(b);   
+        
+    </script>
+</body>
+</html>
